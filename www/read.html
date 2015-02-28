@@ -37,5 +37,11 @@
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/sort.js"></script>
+		<script>
+		var dataToStore = JSON.stringify(sample_list);
+		localStorage.setItem('sampleList', dataToStore);
+		//console.log(localStorage.getItem('sampleList'));
+		</script>
     </body>
 </html>
