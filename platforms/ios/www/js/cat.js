@@ -1,9 +1,15 @@
 //category functionality
 //adding and editing 
 
-var categories = []
+var categories = localStorage["categories"];
+if (categories == undefined){
+	categories = []
+}
+else{
+	categories = JSON.parse(categories);
+}
 
-//Defining a listener for our button, specifically, an onclick handler
+//onclick handler for add button
 document.getElementById("add").onclick = function() {
     //First things first, we need our text:
     var text = document.getElementById("idea").value; //.value gets input values
@@ -14,20 +20,39 @@ document.getElementById("add").onclick = function() {
 			entry.appendChild(document.createTextNode(categories[categories.length -1]+' '));
 			//create remove button
 			var button = document.createElement('BUTTON');
-			button.setAttribute("id", categories[categories.length -1])
+			button.setAttribute("id", "removebtn")
+			button.setAttribute("value", categories[categories.length -1])
+			button.setAttribute("onclick", 'removebtn(this.value)')
 			button.innerHTML = 'remove'
 			entry.appendChild(button)
 
-			console.log(entry)
+			//sets entry id to category associated with 
+			entry.setAttribute("id", categories[categories.length -1])
+
 			list.appendChild(entry);
-			
+
+			//update local storage
+			localStorage["categories"] = JSON.stringify(categories);
 
     }
-    // //Now construct a quick list element
-    // var li = "<li>" + text + "</li>";
+}
 
-    // //Now use appendChild and add it to the list!
-    // document.getElementById("list").appendChild(li);
+function removebtn(value){
+	console.log(value + " was removed")
+	//removes it from array
+	var index = categories.indexOf(value)
+	categories.splice(index, 1);
 
+	//removes it from list 
+	var entry = document.getElementById(value)
+	list.removeChild(entry)
 
+	//update local storage
+	localStorage["categories"] = JSON.stringify(categories);
+
+}
+
+function getCategories(){
+	console.log(categories)
+	return categories
 }
