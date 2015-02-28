@@ -86,7 +86,7 @@ h1 {
     padding:2px 0px;
 }
 
-.items, .status {
+.items, .status, label {
     border-radius:4px;
     -webkit-border-radius:4px;
     color:#FFFFFF;
@@ -108,16 +108,75 @@ h1 {
     font-size:24px;
 }
 
-.record {
+.record, .btn {
     border-radius:4px;
     -webkit-border-radius:4px;
     color:#FFFFFF;
-    background-color:#aaa;
+    background-color:#CCC;
     font-size:14px;
     text-align:center;
     margin:5px auto;
-    padding:2px 2px;
+    padding:5px 5px;
     display:block;
+}
+
+input {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#AAA;
+    font-size:14px;
+    text-align:center;
+    margin:5px auto;
+    padding:5px 5px;
+    display:block;
+}
+
+#submit {
+    background-color:#CCC;
+    color:#FFF;
+}
+
+label {
+    color:#FFFFFF;
+    font-size:20px;
+    text-align:center;
+    padding:2px 0px;
+    display:block;
+    margin:0px auto;
+}
+
+form{
+    visibility:hidden;
+}
+
+#error {
+    color:#AAA;
+    font-size:14px;
+    text-align:center;
+    padding:2px 0px;
+    display:block;
+    margin:0px auto;
+}
+
+.items {
+    padding:5px;
+    height:100%;
+    width:30%;
+    display:block;
+    float:left;
+    margin:0% 35%;
+}
+
+.item_div, .category_div {
+    padding:5px;
+    text-transform: uppercase;
+}
+
+.item_div {
+    float:left;
+}
+.category_div {
+    float:right;
 }
 
 .cover {

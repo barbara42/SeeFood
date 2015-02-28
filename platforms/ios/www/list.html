@@ -34,8 +34,18 @@
             <br>
         </div>
         <div>
-            <button class="record" onclick="app.record()">Record New Item</button>
+            <button id="add" class="btn" onclick="app.new()">Add New Item</button>
+            <button id="sort" class="btn" onclick="app.sortList()">Sort Items</button>
+            <form id="form" onSubmit="app.add()">
+                <label>Item name:</label><input id="item" type="text" class="input"></input>
+                <div id="error" style="visibility:hidden;">Invalid Category</div>
+                <label>Category:</label><input id="category" type="text" class="input"></input>
+                <input id="submit" type="submit" />
+            </form>
         </div>
+        <!-- <div>
+            <button class="record" onclick="app.record()">Record New Item</button>
+        </div> -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/list.js"></script>
     </div>
