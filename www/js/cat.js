@@ -23,7 +23,6 @@ document.getElementById("add").onclick = function() {
 			//sets entry id to category associated with 
 			entry.setAttribute("id", categories[categories.length -1])
 
-			console.log(entry)
 			list.appendChild(entry);
     }
 }
@@ -36,6 +35,6 @@ function removebtn(value){
 
 	//removes it from list 
 	var entry = document.getElementById(value)
-	list.remove(entry)
+	list.removeChild(entry)
 
 }
